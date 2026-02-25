@@ -8,6 +8,72 @@
     body {
             background-color: lightblue;
     }
+/* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f405e;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* sombra elegante */
+}
+
+/* container interno do menu */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* lista do menu */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* links */
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+/* linha animada embaixo */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* hover */
+.menu a:hover::after {
+    width: 100%;
+}
+
+  
     h1 {
   color: rgb(16, 128, 161);
   font-size: 36px;
@@ -28,6 +94,7 @@ img {
   margin: 0 auto 20px;
   border-radius: 10px;
   margin-right: 10px;
+  transform: translateY(-10px);      /* sobe ao passar o mouse */
 
 }
 
@@ -40,14 +107,7 @@ h1 {
     0 0 80px #42bbf3;
 }
 
-/* Variação com cor rosa */
-.neon-pink {
-  color: #F578DE;
-  text-shadow:
-    0 0 10px #F578DE,
-    0 0 30px #F578DE,
-    0 0 60px #921653;
-}
+
 h1 {
       animation: aparecer 1.5s ease forwards;
     }
@@ -78,28 +138,76 @@ h1 {
   border-radius: 20px;
   border: 1px solid
     rgba(255,255,255,0.2);
+
+}
+
+html { scroll-behavior: smooth; }
+
+.card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+
+    background: linear-gradient(135deg, #598daf, #1e5970); /* degradê moderno */
+    border-radius: 15px;       /* cantos arredondados */
+    padding: 20px;             /* espaço interno */
+    margin: 20px 0;            /* espaço entre os cards */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);      /* sobe ao passar o mouse */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* sombra mais forte */
 }
 
   </style>
 </head>
 <body>
 
+  <nav class="menu">
+    <div class="menu-container">
+        <div class="logo">Resenhas Críticas</div>
+        
+
+        <ul>
+             <li><a href="#Percy Jackson ">Livro 1</a></li>
+            <li><a href="#Livro - O Mar de monstros📖 ">Livro 2</a></li>
+            <li><a href="#Livro- A Maldição dos Titãs📖">Livro 3</a></li>
+            <li><a href="#Livro- A Batalha do labirinto📖">Livro 4</a></li>
+            <li><a href="#Livro- A Batalha do labirinto📖">Livro 5</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
   <img src="https://rollingstone.com.br/wp-content/uploads/2025/12/Quando-estreia-a-segunda-temporada-de-Percy-Jackson-e-o-Olimpianos.jpg" alt="html" width="1920 " height="500"> 
       <!--o título do livro-->
-   
+   <section class="categoria" id="Percy Jackson">
       <h1>Percy Jackson </h1>
     
   
   <!--o primeiro livro-->
+  
+  <section class="categoria" id="Livro- O ladrão de raios">
+    <div class="card">
+    <img src="img/imagem 1.webp" alt="html" width= "300" height = "400" align="left"  >
+    <div class="card-text">
    <h3>Livro - O ladrão de raios📖</h3>
-   
-    <img src="imagem 1.webp" alt="html" width= "300" height = "400" align="left"  >
            <p style="" align="center"> <b> O livro segue a história de Percy Jackson, um garoto de 12 anos que descobre ser um semideus, filho de Poseidon. Após ser atacado por uma criatura mitológica durante uma excursão escolar, Percy é levado para o Acampamento Meio-Sangue, um refúgio para filhos de deuses gregos.</p>
-            <p style="" align="center "></p>Lá, ele descobre que foi acusado de roubar o Raio Mestre de Zeus, uma arma poderosa que pode desencadear uma guerra entre os deuses. Para provar sua inocência e evitar o conflito,<br> Percy embarca em uma jornada com seus amigos Annabeth Chase e Grover Underwood para encontrar o verdadeiro ladrão
-             e restaurar a paz no Olimpo.
-             <br>Então, duas características importantes do Percy são que ele tem dislexia e TDAH, o que faz com que ele tenha dificuldade na escola, e isso vai ser bastante importante para a explicação da trama ao longo do livro.</p></b>
-             <br><br><br>
-            </div>
+           <p style="" align="center "></p>Lá, ele descobre que foi acusado de roubar o Raio Mestre de Zeus, uma arma poderosa que pode desencadear uma guerra entre os deuses. Para provar sua inocência e evitar o conflito,<br> Percy embarca em uma jornada com seus amigos Annabeth Chase e Grover Underwood para encontrar o verdadeiro ladrão
+           e restaurar a paz no Olimpo.
+            <br>Então, duas características importantes do Percy são que ele tem dislexia e TDAH, o que faz com que ele tenha dificuldade na escola, e isso vai ser bastante importante para a explicação da trama ao longo do livro.</p></b>
+            <br><br><br>
+            
 <!--O segundo botão-->
 <div style="display: flex; gap: 10xp;">
    <a href="https://www.youtube.com/watch?v=-nowadSIL98"target="_blank"
@@ -115,11 +223,22 @@ h1 {
 </a>
 
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><hr>
+</div>
+</div>
+
+<hr>
+
+
+
+
 
 <!--o segundo livro-->
-<h3> Livro - O Mar de monstros📖</h3>
+ <section class="destaque" id="Livro - O Mar de monstros📖">
+  <div class="card">
 <img src="img/imagem 2.webp" alt="html"  width="300" height="400" align="left">
+  <div class="card-text">
+<h3> Livro - O Mar de monstros📖</h3>
+
             <p style="" align="center"><b>Nessa segunda aventura da série Percy Jackson e os olimpianos, Percy e seus amigos estão em busca do Velocino de Ouro, único artefato mágico capaz de proteger da destruição seu lugar predileto e, até então, o mais seguro do mundo: o Acampamento Meio-Sangue.Em O Mar de Monstros, mais uma vez, Riordan faz o leitor mergulhar em referências à mitologia grega – algumas mais obscuras que outras –, enquanto lapida o crescimento de seu herói adolescente. Percy vai ganhar novos poderes, questionar o amor de seu pai e, é claro, enfrentar muitos monstros e entidades nervosinhas, em uma aventura com ritmo tão acelerado quanto a anterior.</p>
 
                 <p style="" align="center"> No sonho de Percy Jackson, Grover Underwood está fugindo do ciclope, Polifemo, e entra em uma loja de casamentos. A loja então explode e Percy ouve a voz de Polifemo. Ao acordar, ele vê um objeto escuro na janela que descreve como uma sombra que não pertence a ninguém nem a nada (mais tarde descobre-se que é Annabeth). <b></p>
@@ -132,14 +251,19 @@ h1 {
     text-decoration: none;
     border-radius: 10px;" > Saiba Mais</a>
     
-    
   </div>
+  </div>
+ </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+<hr>
 
 <!--O terceiro livro-->
-<h3> Livro- A Maldição dos Titãs📖</h3>
+ <section class="destaque" id="Livro- A Maldição dos Titãs📖">
+  <div class="card">
 <img src="img/imagem 3.webp" alt="html" width="300" height="400" align="left">
+  <div class="card-text">
+<h3> Livro- A Maldição dos Titãs📖</h3>
+
       <p style="" aling="center"><b>A Maldição do Titã (do inglês The Titan's Curse), escrito por Rick Riordan, é o terceiro livro da série Percy Jackson e os Olimpianos.
       Neste livro, uma missão é realizada pelas Caçadoras de Ártemis e campistas para salvar Annabeth Chase e a deusa Ártemis quando elas foram sequestradas pelas mesmas forças. A busca pela qual eles passarão, no entanto, não é tudo o que parece ser, pois os segredos são revelados e o tempo da Grande Profecia se aproxima cada vez mais.Em dezembro, seis meses após a aventura em O Mar de Monstros, Percy Jackson, Thalia Grace e Annabeth Chase vão até a escola Westover Hall para se encontrar com Grover Underwood, que havia encontrado lá dois irmãos semideuses poderosos: Bianca e Nico di Angelo.</p>
 
@@ -153,12 +277,17 @@ h1 {
     
     
   </div>
+  </div>
+  </div>
+<hr>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-
-<!--O terceiro livro-->
-<h3> Livro- A Batalha do labirinto📖</h3>
+<!--O quarto livro-->
+<section class="destaque" id="Livro- A Batalha do labirinto📖">
+  <div class="card">
 <img src="img/imagem 4.webp" alt="html" width="300" height="400" align="left">
+  <div class="card-text">
+<h3> Livro- A Batalha do labirinto📖</h3>
+
         <p style="" aling="center"><b>A Batalha do Labirinto (do inglês The Battle of the Labyrinth), escrito por Rick Riordan, é o quarto livro da série Percy Jackson e os Olimpianos.A história conta a história de como Annabeth Chase lidera seus amigos em uma busca para encontrar o inventor do infame Labirinto quando eles descobrem seu papel em uma conspiração sombria contra o acampamento pelo Exército de Cronos.</p>
         <p style="" aling="center">Annabeth lidera uma missão com Percy, Grover e Tyson para encontrar Dédalo, o criador do Labirinto. Assim que o grupo entra no labirinto, ele os confunde, mudando suas paredes, estreitando as passagens e bloqueando saídas e entradas. Eles acabam em uma sala de estilo romano, onde encontram o deus menor Jano. Ele oferece a Annabeth uma chave para uma das portas atrás dele e a força a fazer uma escolha. No entanto, eles são salvos pela rainha do Olimpo, Hera.</p>
 
@@ -171,13 +300,18 @@ h1 {
     
     
   </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-
+  </div>
+  </div>
+  <hr>
+<!--Quinto livro-->
+<section class="destaque" id="livro-O último olimpiano📖">
+   <div class="card">
+     <img src="img/imagem 5.webp" width="300" height="400" align="left">
+     
+   <div class="card-text">
 <h3>livro-O último olimpiano📖</h3> 
      
-     <img src="img/imagem 5.webp" width="300" height="400" align="left"
-     mar>
+    
               <p style="" align="center"> <b><br>A trama central do livro gira em torno de Percy sendo acusado de roubar o raio mestre de Zeus, o que provoca um conflito entre os deuses que pode resultar em uma guerra devastadora
               provar sua inocência e evitar o confronto, Percy, junto com seus amigos Annabeth Chase, filha de Atena, e Grover Underwood, um sátiro, embarca em uma perigosa jornada pelos Estados Unidos para encontrar o verdadeiro ladrão do raio e restaurar a ordem.
               Para provar sua inocência e evitar o confronto, Percy, junto com seus amigos Annabeth Chase, filha de Atena, e Grover Underwood, um sátiro, embarca em uma perigosa jornada  pelos Estados Unidos para encontrar o verdadeiro ladrão do raio e restaurar a ordem.
@@ -186,7 +320,7 @@ h1 {
    
    
             <p style="" align="center">  <b>Último Olimpiano não é apenas uma conclusão, mas também uma celebração do mundo que Riordan construiu e dos personagens que conquistaram nossos corações ao longo da jornada. Nesta resenha, exploraremos as principais características que fazem deste livro uma leitura tão cativante e satisfatória para fãs de todas as idades.</p><b>
-<!--Botão um-->
+<!--Botão 5-->
 <div style="display: flex; gap: 10px;">
    <a href="https://www.youtube.com/watch?v=VpeZ30D7sOs"target="_blank"
    style="padding: 10px 20px;
@@ -202,7 +336,9 @@ h1 {
 
    
 </div>
- <br><br><br><br><br><br><hr>
+</div>
+</div>
+ <hr>
 
 
 
@@ -226,5 +362,4 @@ h1 {
 
 
 </body>
-
 </html>
